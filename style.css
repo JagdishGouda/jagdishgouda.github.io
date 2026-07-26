@@ -739,3 +739,40 @@ body {
   border-radius: 8px;
   text-align: center;
 }
+
+
+.profile-header {
+  position: relative; /* Keep alignment intact */
+}
+
+.btn-top-right-cv {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px; /* Slightly roomier touch target */
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff; /* Crisp white text for max contrast */
+  background: #0f766e; /* Solid dark teal */
+  border: 1px solid #0f766e;
+  border-radius: 8px; /* Slightly boxier shape matches your social pill cards below */
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(15, 118, 110, 0.2); /* Soft teal accent glow */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-top-right-cv:hover {
+  background: #0d655e;
+  border-color: #0d655e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 118, 110, 0.3);
+}
+
+.btn-top-right-cv svg {
+  fill: currentColor;
+  flex-shrink: 0;
+}
