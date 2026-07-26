@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Jagdish Gouda — Research & Academic Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- STICKY NAVBAR -->
+    <nav class="sticky-nav" id="sticky-nav">
+      <div class="nav-content">
+        <span class="nav-name">Dr. Jagdish Gouda</span>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#trajectory">Trajectory</a>
+          <a href="#publications">Research</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layout-wrapper">
+      <!-- HEADER -->
+      <header class="profile-header">
+        <div class="avatar-container">
+          <img
+            src="assets/profile.jpg"
+            alt="Dr. Jagdish Gouda"
+            class="avatar"
+            onerror="
+              this.src = 'https://via.placeholder.com/124/E7E5E4/57534E?text=JG'
+            "
+          />
+        </div>
+        <div class="header-details">
+          <h1 id="sidebar-name"></h1>
+          <p class="sidebar-title" id="sidebar-title"></p>
+          <p class="sidebar-affil" id="sidebar-affil"></p>
+
+          <div class="meta-bar">
+            <div>
+              <a id="email-link" class="contact-link"></a>
+              <span id="phone-text" class="sub-contact"></span>
+            </div>
+            <div class="profile-links" id="profile-links"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- QUICK STATS -->
+      <section class="stats-strip">
+        <div class="stat-item">
+          <span class="stat-value">5+</span>
+          <span class="stat-label">Publications</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">4.1</span>
+          <span class="stat-label">Max Impact Factor</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">3+</span>
+          <span class="stat-label">Consultancy Audits</span>
+        </div>
+      </section>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- Overview -->
+        <section class="content-block" id="overview">
+          <h2 class="block-label">Overview</h2>
+          <p class="narrative-text" id="narrative-about"></p>
+          <div class="inline-topics" id="topics-container"></div>
+        </section>
+
+        <!-- Trajectory & Impact -->
+        <section class="content-block" id="trajectory">
+          <h2 class="block-label">Trajectory & Impact</h2>
+          <div class="timeline" id="timeline-container"></div>
+        </section>
+
+        <!-- Publications -->
+        <section class="content-block" id="publications">
+          <div class="block-header">
+            <h2 class="block-label">Selected Research</h2>
+            <div class="filter-pills" id="pub-filters">
+              <button class="pill active" data-filter="all">All</button>
+              <button class="pill" data-filter="journal">Journals</button>
+              <button class="pill" data-filter="conference">Conferences</button>
+            </div>
+          </div>
+          <div class="pub-stream" id="pub-stream"></div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <p>
+          &copy; <span id="year"></span> Dr. Jagdish Gouda. Department of Civil
+          Engineering, VNIT Nagpur.
+        </p>
+      </footer>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="toast-notification">
+      Citation copied to clipboard
+    </div>
+
+    <script src="constants.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
