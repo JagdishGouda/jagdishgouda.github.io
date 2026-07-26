@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Jagdish Gouda — Research & Academic Profile</title>
+    <title>Dr. Jagdish Gouda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,6 +86,45 @@
           <div class="timeline" id="timeline-container"></div>
         </section>
 
+        <section id="research" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Research & Findings</h2>
+
+            <!-- Seamless Search Bar -->
+            <div class="search-container">
+              <div class="search-input-wrapper">
+                <svg
+                  class="search-icon"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 19l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                <input
+                  type="text"
+                  id="qa-input"
+                  placeholder="Filter by keyword, binder type, or experimental methodology (e.g., LC2, Geocells, CBR)..."
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Container -->
+          <div id="qa-results" class="qa-results-container"></div>
+
+          <!-- Standard Publications List Below -->
+          <div id="publications-list" class="publications-list">
+            <!-- Existing publication cards render here -->
+          </div>
+        </section>
+
         <!-- Publications -->
         <section class="content-block" id="publications">
           <div class="block-header">
@@ -115,6 +154,8 @@
     </div>
 
     <script src="constants.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="qa.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -159,3 +159,93 @@ document.addEventListener("DOMContentLoaded", () => {
   // Footer Year
   document.getElementById("year").textContent = new Date().getFullYear();
 });
+
+// Initialize Fuse.js with threshold tuning for typo tolerance
+let fuseInstance = null;
+
+if (typeof Fuse !== 'undefined' && typeof RESEARCH_QA !== 'undefined') {
+  fuseInstance = new Fuse(RESEARCH_QA, {
+    keys: [
+      { name: 'question', weight: 0.5 },
+      { name: 'tags', weight: 0.3 },
+      { name: 'answer', weight: 0.2 }
+    ],
+    threshold: 0.8,          // Increased from 0.4 to 0.6 for broader typo tolerance
+    distance: 100,
+    minMatchCharLength: 2,
+    ignoreLocation: true,
+    useExtendedSearch: true
+  });
+}
+
+
+// Helper for Quick Suggestion Chips
+function fillSearch(term) {
+  const input = document.getElementById('qa-input');
+  if (input) {
+    input.value = term;
+    input.dispatchEvent(new Event('input'));
+    input.focus();
+  }
+}
+
+// Search Logic & Card Renderer
+// Function to highlight key engineering metrics in answers automatically
+function formatAnswerText(text) {
+  // Bold percentages, CBR values, IF values, and key material acronyms
+  return text
+    .replace(/(\d+(\.\d+)?%)/g, '<strong>$1</strong>')
+    .replace(/(CBR( values)?)/gi, '<strong>$1</strong>')
+    .replace(/(LC2|FA|RCCP|MOM|CGT)/g, '<strong>$1</strong>');
+}
+
+document.getElementById('qa-input')?.addEventListener('input', (e) => {
+  const query = e.target.value.trim();
+  const resultsContainer = document.getElementById('qa-results');
+  const selectedResearchBlock = document.getElementById('selected-research-block'); // Selected Research container
+  
+  if (!query) {
+    resultsContainer.innerHTML = '';
+    if (selectedResearchBlock) selectedResearchBlock.style.display = 'block';
+    return;
+  }
+
+  // Hide the static selected research list while actively searching to prevent double lists
+  if (selectedResearchBlock) selectedResearchBlock.style.display = 'none';
+
+  let matches = [];
+  if (fuseInstance) {
+    matches = fuseInstance.search(query).map(res => res.item);
+  } else {
+    const q = query.toLowerCase();
+    matches = RESEARCH_QA.filter(item =>
+      item.question.toLowerCase().includes(q) ||
+      item.tags.some(tag => tag.toLowerCase().includes(q))
+    );
+  }
+
+  if (matches.length === 0) {
+    resultsContainer.innerHTML = `
+      <div class="no-match-text">
+        No findings matching "<strong>${e.target.value}</strong>". Try searching for keywords like <strong>LC2</strong>, <strong>Geocells</strong>, <strong>Coir</strong>, or <strong>CBR</strong>.
+      </div>`;
+    return;
+  }
+
+  // Render clean structured cards
+  resultsContainer.innerHTML = matches.map((item, index) => `
+    <details class="qa-item" ${index === 0 ? 'open' : ''}>
+      <summary class="qa-summary">
+        <div class="qa-header-content">
+          <span class="qa-category-pill">${item.category}</span>
+          <h3 class="qa-question-title">${item.question}</h3>
+        </div>
+        <span class="qa-toggle-icon"></span>
+      </summary>
+      <div class="qa-body">
+        <p>${formatAnswerText(item.answer)}</p>
+        ${item.doi ? `<a href="https://doi.org/${item.doi}" target="_blank" class="qa-doi-link">Publication Details →</a>` : ''}
+      </div>
+    </details>
+  `).join('');
+});
