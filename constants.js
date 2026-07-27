@@ -7,7 +7,7 @@ const PROFILE_DATA = {
   email: "jagdishgouda113@gmail.com",
   phone: "+91-8143124621",
 
-  about: "I am a transportation geotechnics researcher specializing in circular economy solutions for civil infrastructure. My work focuses on mine overburden utilization, low-carbon sustainable binders, and geocell/coir reinforcement for low-volume roads. Through full-scale field testing and microstructural characterization, I engineer resilient pavement layers from industrial waste.",
+  about: "I am currently serving as an Ad hoc Assistant Professor in the Department of Civil Engineering at Visvesvaraya National Institute of Technology (VNIT), Nagpur, with expertise in geotechnical and pavement engineering. I hold a Ph.D. in Civil Engineering from VNIT, where my research focused on the sustainable utilization of mine overburden materials reinforced with natural and geosynthetic materials for pavement applications. My work integrates laboratory investigations, field validation, and numerical modeling to develop practical and resilient infrastructure solutions in accordance with IRC, IS, MoRTH, AASHTO, and RDSO standards. My research interests include pavement design, geotechnical investigation, ground improvement, geosynthetics, sustainable geomaterials, mine dump stability, and blanketing design for railway infrastructure. I have authored several publications in reputed peer-reviewed journals and international conferences and am committed to advancing research that bridges academia and industry through innovative, sustainable, and practice-oriented engineering solutions.",
 
   topics: [
     "Pavement Geotechnics",
