@@ -10,10 +10,13 @@ const PROFILE_DATA = {
   about: "I am currently serving as an Ad hoc Assistant Professor in the Department of Civil Engineering at Visvesvaraya National Institute of Technology (VNIT), Nagpur, with expertise in geotechnical and pavement engineering. I hold a Ph.D. in Civil Engineering from VNIT, where my research focused on the sustainable utilization of mine overburden materials reinforced with natural and geosynthetic materials for pavement applications. My work integrates laboratory investigations, field validation, and numerical modeling to develop practical and resilient infrastructure solutions in accordance with IRC, IS, MoRTH, AASHTO, and RDSO standards. My research interests include pavement design, geotechnical investigation, ground improvement, geosynthetics, sustainable geomaterials, mine dump stability, and blanketing design for railway infrastructure. I have authored several publications in reputed peer-reviewed journals and international conferences and am committed to advancing research that bridges academia and industry through innovative, sustainable, and practice-oriented engineering solutions.",
 
   topics: [
-    "Pavement Geotechnics",
-    "Mine Overburden Recycling",
-    "Geocell & Coir Reinforcement",
-    "Low-Carbon Binders"
+    "Pavement Design (IRC, MoRTH, AASHTO)",
+     "Geotechnical Investigation",
+      "Subgrade Evaluation",
+      "Geosynthetics",
+      "Ground Improvement",
+      "Sustainable Materials",
+    "Blanketing Design (RDSO Railways)"
   ],
 
   socials: [
