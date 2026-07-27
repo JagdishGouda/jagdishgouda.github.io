@@ -191,41 +191,74 @@ body {
 }
 
 /* QUICK STATS */
+/* Container styling */
 .stats-strip {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px 24px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border, #e7e5e4);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  gap: 12px;
 }
 
+/* Individual Stat Items */
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 0; /* Prevents text overflow flex bug */
 }
 
 .stat-value {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent, #0f766e);
   line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 0.775rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  font-size: 0.725rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  color: var(--text-light, #78716c);
+  margin-top: 4px;
+  
+  /* Critical Fixes for Mobile */
+  word-break: break-word; /* Allows long words to break if needed */
+  max-width: 120px;       /* Keeps label text wrapped in a neat box */
+  line-height: 1.3;
 }
 
+/* Vertical Dividers */
 .stat-divider {
   width: 1px;
-  height: 28px;
-  background-color: var(--border);
+  height: 32px;
+  background-color: var(--border, #e7e5e4);
+  flex-shrink: 0;
+}
+
+/* Mobile Responsive Adjustment */
+@media (max-width: 520px) {
+  .stats-strip {
+    flex-direction: column; /* Stacks items vertically on small screens */
+    gap: 16px;
+    padding: 18px 12px;
+  }
+
+  .stat-divider {
+    width: 80%; /* Turns vertical divider into a horizontal divider */
+    height: 1px;
+  }
+  
+  .stat-label {
+    max-width: none;
+  }
 }
 
 /* CONTENT BLOCKS & SCROLL OFFSET FIX */
@@ -775,4 +808,61 @@ body {
 .btn-top-right-cv svg {
   fill: currentColor;
   flex-shrink: 0;
+}
+
+/* Desktop View */
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Mobile View */
+@media (max-width: 640px) {
+  .header-top-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* Custom styling for the Consultancy Filter Pill */
+.pill.pill-consultancy {
+  color: #000000; /* Indigo accent text */
+  border-color: #ff9717;
+  /* background-color: #f1c191; */
+}
+
+.pill.pill-consultancy:hover {
+  background-color: #fac58d;
+  border-color: #c7d2fe;
+}
+
+/* Active state when Consultancy is selected */
+.pill.pill-consultancy.active {
+  background-color: #fac58d;
+  color: #000000;
+  border-color: #4f46e5;
+}
+
+/* Consultancy Badge Inside Cards */
+.badge-consultancy {
+  background-color: #fac58d;
+  color: #000000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Status Pill for Completed Projects */
+.badge-status {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.725rem;
+  font-weight: 500;
 }

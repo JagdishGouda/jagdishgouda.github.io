@@ -65,7 +65,7 @@
     <div class="layout-wrapper">
       <!-- HEADER -->
       <header class="profile-header">
-        <a
+        <!-- <a
           href="assets/Jagdish_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -78,7 +78,7 @@
             <path d="M3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
           </svg>
           Curriculum Vitae
-        </a>
+        </a> -->
         <div class="avatar-container">
           <img
             src="assets/profile.jpg"
@@ -90,6 +90,28 @@
           />
         </div>
         <div class="header-details">
+          <div class="header-top-row">
+            <h1 id="sidebar-name">Dr. Jagdish Gouda</h1>
+            <a
+              href="assets/Jagdish_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-top-right-cv"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 111.414-1.414L9 8.586V3a1 1 0 012 0v5.586l2.293-2.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"
+                />
+                <path d="M3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+              </svg>
+              Download CV
+            </a>
+          </div>
           <h1 id="sidebar-name"></h1>
 
           <p class="sidebar-title" id="sidebar-title"></p>
@@ -108,18 +130,18 @@
       <!-- QUICK STATS -->
       <section class="stats-strip">
         <div class="stat-item">
-          <span class="stat-value">14</span>
+          <span class="stat-value" id="stat-publications-count">-</span>
           <span class="stat-label">Publications</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-value">4.1</span>
+          <span class="stat-value" id="stat-max-if">-</span>
           <span class="stat-label">Max Impact Factor</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-value">3+</span>
-          <span class="stat-label">Consultancy Audits</span>
+          <span class="stat-value" id="stat-consultancy-count">-</span>
+          <span class="stat-label">industrial Consultancy</span>
         </div>
       </section>
 
@@ -185,6 +207,9 @@
               <button class="pill active" data-filter="all">All</button>
               <button class="pill" data-filter="journal">Journals</button>
               <button class="pill" data-filter="conference">Conferences</button>
+              <button class="pill pill-consultancy" data-filter="consultancy">
+                Consultancy
+              </button>
             </div>
           </div>
           <div class="pub-stream" id="pub-stream"></div>

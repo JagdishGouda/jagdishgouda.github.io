@@ -222,5 +222,42 @@ const PROFILE_DATA = {
     abstract: "Assesses rutting resistance, marshall stability, and flexural tensile properties of cement-grouted bituminous pavements using varying fluid grout formulations.",
     citation: "Gouda, J., Patil, B., Reddy, D. S., & Dudabhaware, A. (2024). Evaluation Of Mechanical Properties Of Cement Grouted Bituminous Mix. I-DRI 2024, NIT Pondicherry."
   }
-]
+],
+consultancy: [
+    {
+      id: "cons-1",
+      title: "Sub-structural viability of 2P-133 Pier Location of Maha Metro",
+      agency: "Maha Metro",
+      role: "Moderator",
+      status: "Completed"
+    },
+    {
+      id: "cons-2",
+      title: "Technical Audit of RE wall of Nagpur Katol Section of NH353J [Phase-I: Assessment of stability and safety of RE/RS Walls]",
+      agency: "NHAI",
+      role: "Moderator",
+      status: "Completed"
+    },
+    {
+      id: "cons-3",
+      title: "Third-Party Technical Quality Audit (TPQA) of Rigid Pavements",
+      agency: "PWD, Nagpur",
+      role: "Moderator",
+      status: "Completed"
+    },
+    {
+      id: "cons-4",
+      title: "Third-Party Technical Quality Audit (TPQA) of W.B.M. roads",
+      agency: "Nagpur Improvement Trust",
+      role: "Moderator",
+      status: "Completed"
+    },
+    {
+      id: "cons-5",
+      title: "Mix Design and Testing of Blanketing Materials for Construction of Railway formation bridges",
+      agency: "Indian Port Rail & Ropeway Corporation Ltd.",
+      role: "Moderator",
+      status: "Completed"
+    }
+  ]
 };
